@@ -1,0 +1,283 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #f4f4f9;
+    display: flex;
+    overflow-x: hidden;
+    /* Adiciona esta linha para evitar barras de rolagem horizontais */
+}
+
+.sidebar {
+    width: 200px;
+    height: 100vh;
+    background-color: #1f1f1f;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.profile-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.profile-text {
+    color: #f4f4f9;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.nav-item {
+    display: block;
+    padding: 10px;
+    color: #f4f4f9;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #2d2d2d;
+}
+
+.nav-item:hover {
+    background-color: #3498db;
+}
+
+.main-content {
+    margin-left: 220px;
+    width: calc(100% - 220px);
+    padding: 20px;
+    box-sizing: border-box;
+    /* Garante que o padding é incluído na largura total */
+}
+
+.container {
+    margin-top: 50px;
+    max-width: 1500px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    /* Garante que o padding é incluído na largura total */
+}
+
+.title {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* Centraliza os cards */
+    gap: 20px;
+    padding: 0;
+    box-sizing: border-box;
+    /* Garante que o padding é incluído na largura total */
+}
+
+.card {
+    background-color: #1f1f1f;
+    border: 1px solid #3498db;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    /* Largura fixa dos cards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: relative;
+    transition: transform 0.3s ease;
+    /* Adiciona a transição para a escala */
+    box-sizing: border-box;
+    /* Garante que o padding é incluído na largura total */
+}
+
+.card:hover {
+    transform: scale(1.05);
+    /* Aumenta o tamanho do card em 5% */
+}
+
+.card img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.card-title {
+    font-size: 1.2em;
+    text-align: left;
+    margin: 15px 0 10px;
+}
+
+.card-description {
+    text-align: left;
+    font-size: 0.9em;
+    color: #bbb;
+}
+
+.card a {
+    display: block;
+    margin-top: 10px;
+    color: #3498db;
+    text-decoration: none;
+}
+
+.card a.github-icon::after {
+    content: "\f09b";
+    font-family: "Font Awesome 5 Brands";
+    font-weight: 400;
+}
+
+.card a.itch-io-icon::after {
+    content: "\f83a";
+    font-family: "Font Awesome 5 Brands";
+    font-weight: 400;
+}
+
+.new-label {
+    color: white;
+    font-weight: bold;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 0.8em;
+    border: rgb(255, 117, 140) 2px solid;
+    border-radius: 100px;
+    background-color: rgb(255, 117, 140);
+}
+
+/* Responsividade */
+.card-container>.card {
+    flex-basis: calc(25% - 20px);
+    /* Ajuste para larguras maiores */
+}
+
+@media (max-width: 1200px) {
+    .card-container>.card {
+        flex-basis: calc(33.33% - 20px);
+        /* Ajuste para tamanhos médios */
+    }
+}
+
+@media (max-width: 800px) {
+    .card-container>.card {
+        flex-basis: calc(50% - 20px);
+        /* Ajuste para tamanhos menores */
+    }
+}
+
+@media (max-width: 600px) {
+    .card-container>.card {
+        flex-basis: calc(100% - 20px);
+        /* Ajuste para tamanhos muito pequenos */
+    }
+}
+
+.menu-btn {
+    display: none;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: #1f1f1f;
+    color: #f4f4f9;
+    border: none;
+    border-bottom-right-radius: 10px;
+    font-size: 1em;
+    padding: 15px 18px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .sidebar.active {
+        display: flex;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+.social-icons {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    color: #f4f4f9;
+    font-size: 1.5em;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    color: #3498db;
+}
+
+.card .icon-container {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.card .icon-container .social-icon {
+    color: #f4f4f9;
+    padding-right: 10px;
+}
+
+.card .icon-container .social-icon:hover {
+    color: #3498db;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1f1f1f;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3498db;
+    border-radius: 10px;
+    border: 3px solid #1f1f1f;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #2980b9;
+}
