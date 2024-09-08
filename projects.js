@@ -19,25 +19,25 @@ const projects = [
         description: "PhoneX was developed for a school assignment, it's an application for pure entertainment."
     },
     {
-        image: "images/projects/SpaceClicker.png",
+        image: "images/projects/spaceClicker.png",
         title: "SpaceClicker",
         description: "A very efficient autoclicker that can help with various functionalities.",
         github: "https://github.com/gogosal/SpaceClicker"
     },
     {
-        image: "images/projects/Optimizer.png",
+        image: "images/projects/optimizer.png",
         title: "Optimizer",
         description: "This app is designed more for those who have a less than great computer, so it optimises it to run games better.",
         github: "https://github.com/gogosal/Optimizer"
     },
     {
-        image: "images/projects/OptiClean.png",
+        image: "images/projects/optiClean.png",
         title: "OptiClean",
         description: "Are you running out of space on your computer? With this application you can clean up useless files on your computer.",
         github: "https://github.com/gogosal/OptiClean"
     },
     {
-        image: "images/projects/HydraVirus.png",
+        image: "images/projects/hydraVirus.png",
         title: "HydraVirus",
         description: "This virus is a programme that replicates itself when you try to close it. Although it is not harmful, it is recommended that you only run it on a virtual machine.",
         github: "https://github.com/gogosal/HydraVirus"
