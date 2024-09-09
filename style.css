@@ -6,7 +6,6 @@ body {
     color: #f4f4f9;
     display: flex;
     overflow-x: hidden;
-    /* Adiciona esta linha para evitar barras de rolagem horizontais */
 }
 
 .sidebar {
@@ -64,11 +63,11 @@ body {
 }
 
 .main-content {
+    transition: opacity 0.3s ease;
     margin-left: 220px;
     width: calc(100% - 220px);
     padding: 20px;
     box-sizing: border-box;
-    /* Garante que o padding é incluído na largura total */
 }
 
 .container {
@@ -76,7 +75,6 @@ body {
     max-width: 1500px;
     margin: 0 auto;
     box-sizing: border-box;
-    /* Garante que o padding é incluído na largura total */
 }
 
 .title {
@@ -89,11 +87,9 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    /* Centraliza os cards */
     gap: 20px;
     padding: 0;
     box-sizing: border-box;
-    /* Garante que o padding é incluído na largura total */
 }
 
 .card {
@@ -102,18 +98,14 @@ body {
     border-radius: 10px;
     padding: 20px;
     width: 300px;
-    /* Largura fixa dos cards */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     position: relative;
     transition: transform 0.3s ease;
-    /* Adiciona a transição para a escala */
     box-sizing: border-box;
-    /* Garante que o padding é incluído na largura total */
 }
 
 .card:hover {
     transform: scale(1.05);
-    /* Aumenta o tamanho do card em 5% */
 }
 
 .card img {
@@ -165,30 +157,25 @@ body {
     background-color: rgb(255, 117, 140);
 }
 
-/* Responsividade */
 .card-container>.card {
     flex-basis: calc(25% - 20px);
-    /* Ajuste para larguras maiores */
 }
 
 @media (max-width: 1200px) {
     .card-container>.card {
         flex-basis: calc(33.33% - 20px);
-        /* Ajuste para tamanhos médios */
     }
 }
 
 @media (max-width: 800px) {
     .card-container>.card {
         flex-basis: calc(50% - 20px);
-        /* Ajuste para tamanhos menores */
     }
 }
 
 @media (max-width: 600px) {
     .card-container>.card {
         flex-basis: calc(100% - 20px);
-        /* Ajuste para tamanhos muito pequenos */
     }
 }
 

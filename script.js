@@ -18,15 +18,37 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    const cards = document.querySelectorAll('.card');
+    const navItems = document.querySelectorAll('.nav-item');
 
-    cards.forEach(card => {
-        card.addEventListener('mouseover', () => {
-            card.style.transform = 'scale(1.05)';
-        });
+    navItems.forEach(navItem => {
+        navItem.addEventListener('click', (e) => {
+            e.preventDefault();
 
-        card.addEventListener('mouseout', () => {
-            card.style.transform = 'scale(1)';
+            const page = navItem.getAttribute('href');
+
+            fetch(page)
+                .then(response => response.text())
+                .then(data => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(data, 'text/html');
+                    const newContent = doc.querySelector('.main-content').innerHTML;
+
+                    const mainContent = document.querySelector('.main-content');
+                    mainContent.style.opacity = 0;
+
+                    setTimeout(() => {
+                        mainContent.innerHTML = newContent;
+                        mainContent.style.opacity = 1;
+
+                        if (page.includes('projects.html')) {
+                            loadProjectsAndGames();
+                        }
+                    }, 300);
+                });
         });
     });
+
+    if (window.location.href.includes('projects.html')) {
+        loadProjectsAndGames();
+    }
 });
