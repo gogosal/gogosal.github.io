@@ -47,6 +47,14 @@ function loadProjectsAndGames() {
 
     const games = [
         {
+            image: "images/projects/nuvem.png",
+            title: "NUVEM",
+            description: "Wreak havoc through the dungeons to climb up the tower and reach the heavens above. Developed for Brackeys Game Jam 2024.2. This project was developed by myself and Pedro Neves",
+            link: "https://pedronevesdev.itch.io/nuvem",
+            newLabel: true,
+            icon: "fa-solid fa-gamepad"
+        },
+        {
             image: "images/projects/pokeSpectra.png",
             title: "PokéSpectra",
             description: "It's a fangame inspired by Pokémon Red, this project was done in 1 year and was for the purpose of the final course project (PAP).",
