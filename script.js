@@ -2,6 +2,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const sidebar = document.getElementById('sidebar');
     let menuBtn = document.getElementById('menu-btn');
 
+    function checkMenuBtnDisplay() {
+        if (window.innerWidth > 768) {
+            menuBtn.style.display = 'none';
+        } else {
+            menuBtn.style.display = 'block';
+        }
+    }
+
     function initializeMenuBtn() {
         menuBtn = document.getElementById('menu-btn');
         if (!menuBtn) return;
@@ -11,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (sidebar.classList.contains('active')) {
                 menuBtn.style.display = 'none';
             } else {
-                menuBtn.style.display = 'block';
+                checkMenuBtnDisplay();
             }
         });
 
@@ -24,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function hideSidebar() {
         sidebar.classList.remove('active');
-        menuBtn.style.display = 'block';
+        checkMenuBtnDisplay();
     }
 
     function loadPageContent(page) {
@@ -33,16 +41,27 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(data => {
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(data, 'text/html');
-                const newContent = doc.querySelector('.main-content').innerHTML;
 
-                const mainContent = document.querySelector('.main-content');
-                mainContent.style.opacity = 0;
+                const newContent = doc.querySelector('.main-content, .home-content').innerHTML;
+
+                const currentContent = document.querySelector('.main-content, .home-content');
+                currentContent.style.opacity = 0;
 
                 setTimeout(() => {
-                    mainContent.innerHTML = newContent;
-                    mainContent.style.opacity = 1;
+                    currentContent.innerHTML = newContent;
+                    currentContent.style.opacity = 1;
+
+                    if (page.includes('projects.html')) {
+                        currentContent.classList.remove('home-content');
+                        currentContent.classList.add('main-content');
+                    }
+                    if (page.includes('index.html')) {
+                        currentContent.classList.remove('main-content');
+                        currentContent.classList.add('home-content');
+                    }
 
                     initializeMenuBtn();
+                    checkMenuBtnDisplay();
 
                     if (page.includes('projects.html')) {
                         loadProjectsAndGames();
@@ -53,6 +72,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     initializeMenuBtn();
+
+    window.addEventListener('load', checkMenuBtnDisplay);
+    window.addEventListener('resize', checkMenuBtnDisplay);
 
     const navItems = document.querySelectorAll('.nav-item');
     navItems.forEach(navItem => {

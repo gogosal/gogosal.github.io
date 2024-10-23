@@ -14,11 +14,11 @@ function loadProjectsAndGames() {
             github: "https://github.com/gogosal/AnimeList",
             newLabel: true
         },
-        {
-            image: "images/projects/stackRoullete.png",
-            title: "PhoneX",
-            description: "PhoneX was developed for a school assignment, it's an application for pure entertainment."
-        },
+        /*         {
+                    image: "images/projects/stackRoullete.png",
+                    title: "PhoneX",
+                    description: "PhoneX was developed for a school assignment, it's an application for pure entertainment."
+                }, */
         {
             image: "images/projects/spaceClicker.png",
             title: "SpaceClicker",

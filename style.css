@@ -22,7 +22,6 @@ body {
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
 }
 
-
 .profile {
     display: flex;
     align-items: center;
@@ -61,6 +60,23 @@ body {
 
 .nav-item:hover {
     background-color: #3498db;
+}
+
+.home-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin-left: 220px;
+    width: calc(100% - 220px);
+    padding: 20px;
+    box-sizing: border-box;
+    transition: opacity 0.3s ease;
+}
+
+.home-title {
+    font-size: 2.5em;
+    text-align: center;
 }
 
 .main-content {
@@ -174,28 +190,11 @@ body {
     }
 }
 
-@media (max-width: 600px) {
-    .card-container>.card {
-        flex-basis: calc(100% - 20px);
-    }
-}
-
-.menu-btn {
-    display: none;
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    background-color: #1f1f1f;
-    color: #f4f4f9;
-    border: none;
-    border-bottom-right-radius: 10px;
-    font-size: 1em;
-    padding: 15px 18px;
-    cursor: pointer;
-    z-index: 1000;
-}
-
 @media (max-width: 768px) {
+    .menu-btn {
+        display: block;
+    }
+
     .sidebar {
         display: none;
         width: 100%;
@@ -216,6 +215,41 @@ body {
         width: 100%;
         max-width: 100vw;
     }
+
+    .home-content {
+        margin-left: 0;
+        /* remove o espaço da sidebar */
+        width: 100%;
+        /* garante que ocupa toda a largura */
+    }
+
+    .home-title {
+        font-size: 2em;
+        /* ajuste o tamanho da fonte se necessário */
+        text-align: center;
+        /* centraliza o texto */
+    }
+}
+
+@media (max-width: 600px) {
+    .card-container>.card {
+        flex-basis: calc(100% - 20px);
+    }
+}
+
+.menu-btn {
+    display: none;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: #1f1f1f;
+    color: #f4f4f9;
+    border: none;
+    border-bottom-right-radius: 10px;
+    font-size: 1em;
+    padding: 15px 18px;
+    cursor: pointer;
+    z-index: 1000;
 }
 
 .social-icons {
