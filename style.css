@@ -218,16 +218,12 @@ body {
 
     .home-content {
         margin-left: 0;
-        /* remove o espaço da sidebar */
         width: 100%;
-        /* garante que ocupa toda a largura */
     }
 
     .home-title {
         font-size: 2em;
-        /* ajuste o tamanho da fonte se necessário */
         text-align: center;
-        /* centraliza o texto */
     }
 }
 
