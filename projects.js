@@ -1,4 +1,14 @@
 function loadProjectsAndGames() {
+    const web = [
+        {
+            image: "images/websites/nolimitsesports.png",
+            title: "NolimitsEsports",
+            description: "A gaming organisation's website.",
+            link: "https://nolimitsesports.com/card",
+            icon: "fa-solid fa-globe",
+            newLabel: true
+        },
+    ];
     const projects = [
         {
             image: "images/projects/valorantWallpaper.png",
@@ -108,4 +118,5 @@ function loadProjectsAndGames() {
 
     document.getElementById('projects-container').innerHTML = projects.map(createCard).join('');
     document.getElementById('games-container').innerHTML = games.map(createCard).join('');
+    document.getElementById('web-container').innerHTML = web.map(createCard).join('');
 }
