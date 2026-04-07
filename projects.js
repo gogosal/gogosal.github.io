@@ -8,6 +8,14 @@ function loadProjectsAndGames() {
             icon: "fa-solid fa-globe",
             newLabel: true
         },
+        {
+            image: "images/websites/dstools.png",
+            title: "DSTools",
+            description: "A comprehensive guide and base-builder for Don't Starve Together. Helping players survive one of gaming's most brutal worlds.",
+            link: "https://dst-tools.vercel.app",
+            icon: "fa-solid fa-globe",
+            newLabel: true
+        },
     ];
     const projects = [
         {
